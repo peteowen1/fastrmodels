@@ -103,7 +103,7 @@ fg_model_data <-  pbp_data %>%
   make_model_mutations()
 
 #estimate model
-fg_model <- mgcv::bam(sp ~ s(yardline_100, by = interaction(era, model_roof)) + model_roof + era,
+fg_model <- mgcv::bam(sp ~ s(yardline_100, by = interaction(era, model_roof)) + model_roof + model_surface + era,
                       data = fg_model_data, family = "binomial")
 
 ################################################################################
